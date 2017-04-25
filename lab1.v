@@ -72,8 +72,8 @@ endmodule
 
 module main(
 	input [17:0] iSW,
-	output reg [7:0] oHEX7_D, oHEX6_D, oHEX5_D, oHEX4_D, oHEX3_D, oHEX2_D, oHEX1_D, oHEX0_D,
-	output reg oHEX7_DP, oHEX6_DP, oHEX5_DP, oHEX4_DP, oHEX3_DP, oHEX2_DP, oHEX1_DP, oHEX0_DP);
+	output [7:0] oHEX7_D, oHEX6_D, oHEX5_D, oHEX4_D, oHEX3_D, oHEX2_D, oHEX1_D, oHEX0_D,
+	output oHEX7_DP, oHEX6_DP, oHEX5_DP, oHEX4_DP, oHEX3_DP, oHEX2_DP, oHEX1_DP, oHEX0_DP);
 
 	assign oHEX7_DP = 1'b1;
 	assign oHEX6_DP = 1'b1;
