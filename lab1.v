@@ -82,13 +82,12 @@ module alu(
 	output reg [13:0] out,
 	output reg [1:0] type);
 
-	initial begin
-		type = 2'b00;
-	end
-
 	always @(a or b or op) begin
 		case(op)
-			2'b00: out = a + b;
+			2'b00: begin
+				out = a + b;
+				type = 2'b00;
+			end
 			2'b01: begin
 				if(a < b) begin	
 				    out = b - a;
@@ -103,7 +102,10 @@ module alu(
 					out = a - b;
 				end
 			end
-			2'b10: out = a * b;
+			2'b10: begin
+				out = a * b;
+				type = 2'b00;
+			end
 			2'b11: begin
 				out[13:7] = a / b;
 				out[6:0] = (a - b * (a / b));
