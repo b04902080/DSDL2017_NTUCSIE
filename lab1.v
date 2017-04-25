@@ -70,7 +70,7 @@ module seg(
 			4'b0111: OUT <= 8'b11111000;
 			4'b1000: OUT <= 8'b10000000;
 			4'b1001: OUT <= 8'b10010000;
-			4'b1111: OUT <= 8'b10111111;//negative sign
+			4'b1111: OUT <= 8'b10111111;	// negative sign
 			default: OUT <= 8'b11111111;
 		endcase
 	end
@@ -90,7 +90,7 @@ module alu(
 		case(op)
 			2'b00: out = a + b;
 			2'b01: begin
-				if(a < b) begin		//handle the quotient and remainder
+				if(a < b) begin	
 				    out = b - a;
 				    if (out > 9) begin
 				    	type = 2'b10;
