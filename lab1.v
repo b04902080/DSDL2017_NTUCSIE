@@ -100,6 +100,7 @@ module alu(
 				end
 				else begin
 					out = a - b;
+					type = 2'b00;
 				end
 			end
 			2'b10: begin
